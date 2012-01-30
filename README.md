@@ -32,6 +32,13 @@ Setup
   
     $ pip install -U --src="$HOME/.src" -e git://github.com/timtadh/passmash.git#egg=passmash
 
+### Setting up the Key File
+    
+We recomend the keyfile be random data. eg.
+
+    $ head -c 512 /dev/urandom > ~/.ssh/passmash.key
+
+
 Syntax
 ------
 
@@ -41,14 +48,6 @@ Syntax
         -h, help                     Display this message
         -c, clamp=N                  Don't output more than N characters
         -v, version                  Version information
-
-
-Setting up the Key File
------------------------
-    
-We recomend the keyfile be random data. eg.
-
-    $ head -c 512 /dev/urandom > ~/.ssh/passmash.key
 
 
 Hashing Algorithm
