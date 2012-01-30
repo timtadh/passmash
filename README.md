@@ -3,9 +3,9 @@ Passmash - The Site Specific Password Munger
 
 Passmash produces a unique password for each site you use based on
 
-    - The url (supplied as a commandline argument)
-    - A password (supplied via an interactive prompt)
-    - A keyfile (located at ~/.ssh/passmash.key)
+- The url (supplied as a commandline argument)
+- A password (supplied via an interactive prompt)
+- A keyfile (located at ~/.ssh/passmash.key)
 
 
 Usage
