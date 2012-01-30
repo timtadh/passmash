@@ -11,10 +11,26 @@ Passmash produces a unique password for each site you use based on
 Usage
 =====
 
-    $ passmash anyurlhere.com/login | xclip -selection clipboard
+You can use the module directly via 
 
-Will place the password in your clipboard without echoing it to the console.
+    $ python -m passmash anyurlhere.com/login | xclip -selection clipboard
 
+Which will place the password in your clipboard without echoing it to the console.
+
+Alternatively, you can use a convience script which does the same thing (should
+work for Linux, Mac and Windows).
+
+    $ pm yoururlhere.com/login
+
+
+Setup
+-----
+
+    $ pip install --src="$HOME/.src" -e git://github.com/timtadh/passmash.git#egg=passmash
+
+### Updating
+  
+    $ pip install -U --src="$HOME/.src" -e git://github.com/timtadh/passmash.git#egg=passmash
 
 Syntax
 ------
