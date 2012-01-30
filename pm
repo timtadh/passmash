@@ -29,5 +29,6 @@ if clipper is not None and pm.returncode == 0:
     clip = subprocess.Popen(clipper, stdin=subprocess.PIPE)
     clip.communicate(out)
 else:
+    print out
     print ' - '.join(out[i:i+5] for i in xrange(0, len(out), 5))
 
