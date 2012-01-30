@@ -36,7 +36,7 @@ Explanation
 
         h = hmac.new(key, password, sha256)
         h.update(url)
-        for i in xrange(1000):
+        for i in xrange(25000):
             h.update(h.digest())
         return h.digest()
 '''
@@ -54,7 +54,7 @@ with open(keyfile) as f:
 def mash(url, password):
     h = hmac.new(key, password, sha256)
     h.update(url)
-    for i in xrange(1000):
+    for i in xrange(250000):
         h.update(h.digest())
     return h.digest()
 
