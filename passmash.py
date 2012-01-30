@@ -47,11 +47,13 @@ error_codes = {
     'option':3,
 }
 
-keyfile = os.path.expanduser('~/.ssh/passmash.key')
-with open(keyfile) as f:
-    key = f.read()
+def keyfile():
+    keyfile = os.path.expanduser('~/.ssh/passmash.key')
+    with open(keyfile) as f:
+        key = f.read()
+    return key
 
-def mash(url, password):
+def mash(key, url, password):
     h = hmac.new(key, password, sha256)
     h.update(url)
     for i in xrange(250000):
@@ -100,9 +102,10 @@ def main():
             sys.exit(error_codes['version'])
         elif opt in ('-c', '--clamp'):
             clamp = int(arg)
-    
+   
+    key = keyfile()
     password = getpass()
-    mashed = pretty(mash(url, password))
+    mashed = pretty(mash(key, url, password))
     if clamp is None: clamp = len(mashed)
     output(mashed[:min(clamp, len(mashed))])
     log('')
