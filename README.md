@@ -42,7 +42,7 @@ The hashing algorithm is:
 
     h = hmac.new(key, password, sha256)
     h.update(url)
-    for i in xrange(25000):
+    for i in xrange(250000):
         h.update(h.digest())
     return h.digest()
 
