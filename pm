@@ -4,25 +4,30 @@
 #Email: tim.tadh@hackthology.com
 #For licensing see the LICENSE file in the top level directory.
 
-import os, sys, subprocess
+import os, sys, subprocess, platform
 
 # python -m passmash $@ | xclip -selection clipboard
 
 if __name__ != '__main__': raise RuntimeError, "Can only be run as main"
 
-if os.name == 'posix':
+system = platform.system().lower()  
+
+clipper = None
+if system == 'linux':
     clipper = ['xclip', '-selection', 'clipboard']
-elif os.name == 'darwin':
+elif system == 'darwin':
     clipper = ['pbcopy']
-elif os.name == 'windows':
+elif system == 'windows':
     clipper = ['clip']
 else:
-    raise RuntimeError, "We don't yet support %s" % (os.name,)
+    print >>sys.stderr, "We don't yet support %s for autoclipboard copying" % (platform.system(),)
 
 args = sys.argv[1:]
 pm = subprocess.Popen(['python', '-m', 'passmash'] + args, stdout=subprocess.PIPE)
 out, err = pm.communicate()
-if pm.returncode == 0:
+if clipper is not None and pm.returncode == 0:
     clip = subprocess.Popen(clipper, stdin=subprocess.PIPE)
     clip.communicate(out)
+else:
+    print out
 
