@@ -1,7 +1,7 @@
 from distutils.core import setup
 import passmash
 
-setup(name='swork',
+setup(name='passmash',
       version=str(passmash.RELEASE),
       description=( 'A site specific password munger.'),
       author='Tim Henderson',
