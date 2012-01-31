@@ -11,17 +11,28 @@ Passmash produces a unique password for each site you use based on
 Usage
 =====
 
-You can use the module directly via 
+There are two ways to use `passmash`
 
-    $ python -m passmash anyurlhere.com/login | xclip -selection clipboard
+1. Using the `pm` script.
 
-Which will place the password in your clipboard without echoing it to the console.
+    The `pm` script takes a URL (or other identifier) and prompts for a
+    password. It places the derived (generated) password on the clipboard.
 
-Alternatively, you can use a convience script which does the same thing (should
-work for Linux, Mac and Windows).
+        $ pm yoururlhere.com/login
 
-    $ pm yoururlhere.com/login
+    1. On Linux it uses the `xclip` program. 
+    2. On MacOS X it uses `pbcopy`.
+    3. On Windows it uses `clip`.
 
+2. Invoking the python module directly. 
+
+    Alternatively you can invoke the module directly
+
+        $ python -m passmash anyurlhere.com/login | xclip -selection clipboard
+    
+    It will pipe the derived (generated) password to stdout (fd 1) and place all
+    other output (such as prompts and error information) on stderr (fd 2).
+        
 
 Setup
 -----
