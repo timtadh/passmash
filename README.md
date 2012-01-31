@@ -68,7 +68,7 @@ Setup
     - Install `pip`
     
 
-### Install `passmash`
+### Install Passmash
 
     $ [sudo] pip install --src="$HOME/.src" -e git://github.com/timtadh/passmash.git#egg=passmash
 
