@@ -49,7 +49,7 @@ error_codes = {
 
 def keyfile():
     keyfile = os.path.expanduser('~/.ssh/passmash.key')
-    with open(keyfile) as f:
+    with open(keyfile, 'rb') as f:
         key = f.read()
     return key
 
