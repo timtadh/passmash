@@ -9,7 +9,7 @@ Passmash produces a unique password for each site you use based on
 
 
 Usage
-=====
+-----
 
 There are two ways to use `passmash`
 
@@ -28,7 +28,7 @@ There are two ways to use `passmash`
 
     Alternatively you can invoke the module directly
 
-        $ python -m passmash anyurlhere.com/login | xclip -selection clipboard
+        $ python -m passmash anyurlhere.com/login
     
     It will pipe the derived (generated) password to stdout (fd 1) and place all
     other output (such as prompts and error information) on stderr (fd 2).
@@ -106,9 +106,7 @@ Syntax
 
 
 Hashing Algorithm
-=================
-
-The hashing algorithm is:
+-----------------
 
     h = hmac.new(key, password, sha256)
     h.update(url)
