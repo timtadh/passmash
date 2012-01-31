@@ -3,7 +3,7 @@ Passmash - The Site Specific Password Munger
 
 Passmash produces a unique password for each site you use based on
 
-- The url (supplied as a commandline argument)
+- The url (supplied as a command line argument)
 - A password (supplied via an interactive prompt)
 - A keyfile (located at ~/.ssh/passmash.key)
 
@@ -37,6 +37,39 @@ There are two ways to use `passmash`
 Setup
 -----
 
+### Install Dependencies
+
+
+- Linux [Debian Compatible Instructions]
+    - Install Python 2.7.x (Tested, 2.6 may work)
+      
+            $ sudo apt-get install python2.7
+         
+    - Install `pip`
+        
+            $ sudo apt-get install python-pip
+
+    - [Optional] Install `xclip` (needed for automatic clipboard copying)
+      
+            $ sudo apt-get install xclip
+
+- Mac OS X
+  
+    (If you use a Mac please submit a pull request pointing to resources for this)
+
+    - Install Python 2.7.x (Tested, 2.6 may work)
+    - Install `pip`
+
+- Windows
+
+    (If you use Windows please submit a pull request pointing to resources for this)
+
+    - Install Python 2.7.x (Tested, 2.6 may work)
+    - Install `pip`
+    
+
+### Install `passmash`
+
     $ [sudo] pip install --src="$HOME/.src" -e git://github.com/timtadh/passmash.git#egg=passmash
 
 ### Updating
@@ -45,7 +78,7 @@ Setup
 
 ### Setting up the Key File
     
-We recomend the keyfile be random data. The following command generates 512
+We recommend the keyfile be random data. The following command generates 512
 bytes of data from the unlimited random byte generator.
 
     $ head -c 512 /dev/urandom > ~/.ssh/passmash.key
