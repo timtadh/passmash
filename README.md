@@ -37,11 +37,11 @@ There are two ways to use `passmash`
 Setup
 -----
 
-    $ pip install --src="$HOME/.src" -e git://github.com/timtadh/passmash.git#egg=passmash
+    $ [sudo] pip install --src="$HOME/.src" -e git://github.com/timtadh/passmash.git#egg=passmash
 
 ### Updating
   
-    $ pip install -U --src="$HOME/.src" -e git://github.com/timtadh/passmash.git#egg=passmash
+    $ [sudo] pip install -U --src="$HOME/.src" -e git://github.com/timtadh/passmash.git#egg=passmash
 
 ### Setting up the Key File
     
