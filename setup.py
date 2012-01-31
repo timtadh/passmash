@@ -3,10 +3,10 @@ import passmash
 
 setup(name='passmash',
       version=str(passmash.RELEASE),
-      description=( 'A site specific password munger.'),
+      description=('A site specific password munger.'),
       author='Tim Henderson',
       author_email='tim.tadh@gmail.com',
-      url='https://www.github.com/timtadh/passmash/tree/%s' % str(passmash.RELEASE),
+      url='https://www.github.com/timtadh/passmash',
       license='GPLv2',
       provides=['passmash'],
       scripts=['pm'],
