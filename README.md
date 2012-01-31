@@ -34,9 +34,20 @@ Setup
 
 ### Setting up the Key File
     
-We recomend the keyfile be random data. eg.
+We recomend the keyfile be random data. The following command generates 512
+bytes of data from the unlimited random byte generator.
 
     $ head -c 512 /dev/urandom > ~/.ssh/passmash.key
+
+This command does the same thing but from the slightly more secure limited
+random byte generator. May be slow.
+
+    $ head -c 512 /dev/random > ~/.ssh/passmash.key
+
+Finally, you can use any key length (I recommend 512 bytes as the minimum). This
+command generates 16384 bytes (16 KB) of data from the unlimited generator. 
+
+    $ head -c 16384 /dev/urandom > ~/.ssh/passmash.key
 
 
 Syntax
