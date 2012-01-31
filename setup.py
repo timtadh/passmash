@@ -12,6 +12,6 @@ setup(name='passmash',
       scripts=['pm'],
       py_modules=['passmash'],
       platforms=['unix', 'darwin', 'windows'],
-      data_files=[('.', ['GPL', 'LICENSE', 'README'])],
+      data_files=[('.', ['GPL', 'LICENSE', 'README.md'])],
 )
 
