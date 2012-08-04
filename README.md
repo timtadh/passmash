@@ -55,14 +55,16 @@ Setup
 
 - Mac OS X
   
-    (If you use a Mac please submit a pull request pointing to resources for this)
+    (If you use a Mac please submit a pull request pointing to resources for
+    this)
 
     - Install Python 2.7.x (Tested, 2.6 may work)
     - Install `pip`
 
 - Windows
 
-    (If you use Windows please submit a pull request pointing to resources for this)
+    (If you use Windows please submit a pull request pointing to resources for
+    this)
 
     - Install Python 2.7.x (Tested, 2.6 may work)
     - Install `pip`

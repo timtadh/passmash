@@ -18,11 +18,14 @@ usage_message = \
 extended_message = \
 '''
 Options
+
     -h, help                     Display this message
     -c, clamp=N                  Don't output more than N characters
     -v, version                  Version information
 
+
 Explanation
+
     Produces a password for a website based on
         - url (supplied as a commandline argument)
         - password (supplied at interactive prompt)

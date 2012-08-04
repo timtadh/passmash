@@ -20,7 +20,8 @@ elif system == 'darwin':
 elif system == 'windows':
     clipper = ['clip']
 else:
-    print >>sys.stderr, "We don't yet support %s for autoclipboard copying" % (platform.system(),)
+    print >>sys.stderr, "We don't yet support %s for autoclipboard copying" % \
+      (platform.system(),)
 
 args = sys.argv[1:]
 pm = subprocess.Popen(['python', '-m', 'passmash'] + args, stdout=subprocess.PIPE)
