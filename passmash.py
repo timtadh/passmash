@@ -21,6 +21,7 @@ Options
 
     -h, help                     Display this message
     -c, clamp=N                  Don't output more than N characters
+    -s, strip                    Strip non-alpha-numberic characters
     -v, version                  Version information
 
 
@@ -86,8 +87,8 @@ def usage(code=None):
 def main():
     try:
         opts, args = getopt(sys.argv[1:],
-            'hvc:',
-            ['help', 'version', 'clamp='])
+            'hvc:s',
+            ['help', 'version', 'clamp=', 'strip'])
     except GetoptError, err:
         log(err)
         usage(error_codes['option'])
@@ -97,6 +98,7 @@ def main():
         usage()
     
     clamp = None
+    strip = False
     for opt, arg in opts:
         if opt in ('-h', '--help'):
             usage()
@@ -105,11 +107,16 @@ def main():
             sys.exit(error_codes['version'])
         elif opt in ('-c', '--clamp'):
             clamp = int(arg)
+        elif opt in ('-s', '--strip'):
+            strip = True
    
     key = keyfile()
     password = getpass()
     mashed = pretty(mash(key, url, password))
-    if clamp is None: clamp = len(mashed)
+    if strip:
+        mashed = ''.join(c for c in mashed if c.isalnum())
+    if clamp is None: 
+        clamp = len(mashed)
     output(mashed[:min(clamp, len(mashed))])
     log('')
 
